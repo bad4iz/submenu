@@ -41,9 +41,16 @@ class Db {
   }
 
   function view_cat($arr,$parent_id = 0){
-    if(){
-
+    if(empty($arr[$parent_id])){
+      return;
     }
+    echo "<ul>";
+    foreach ($arr[$parent_id] as $item) {
+      echo "<li><a href='#'>$item[title]</a>";
+      $this->view_cat($arr,$item['id']);
+      echo "</li>";
+    }
+    echo "</ul>";
   }
 
 

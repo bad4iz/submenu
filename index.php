@@ -7,8 +7,5 @@ include 'functions/functions.php';
 
 $db = new Db(DB);
 
-print_r( $db->get_cat());
+$db->view_cat( $db->get_cat());
 
-function my_func() {
-
-}
